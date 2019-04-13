@@ -17,6 +17,7 @@ Each programs are described in the articles in [DevicePlus](http://deviceplus.jp
 ```
 sudo pip install picamera
 sudo pip install httplib2
+sudo pip install --upgrade google-api-python-client
 sudo pip install --upgrade google-cloud-vision
 ```
 
