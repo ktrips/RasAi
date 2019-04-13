@@ -12,7 +12,11 @@ from oauth2client.client import GoogleCredentials
 
 default_detect= ["FACE", "LABEL", "LOGO"]
 default_max   = 3
-dir_image     = '/home/pi/AIY-projects-python/src/smart/image/'
+dir_image     = '/home/pi/Programs/image/'
+dir_aquest    = '/home/pi/Programs/aquestalkpi/'
+CARD  = 1
+DEVICE= 0
+VOLUME= 80
 DISCOVERY_URL = "https://{api}.googleapis.com/$discovery/rest?version={apiVersion}"
 def camera():
     now = datetime.now()
@@ -79,11 +83,15 @@ def main(detect="", photo_file=""):
           except:
             result += "No " + DET + ", "
         print('Result: ' + result)
+        if talk == "Y":
+            os.system(dir_aquest + '/AquesTalkPi -g {} {} | aplay -D plughw:{},{}'.format(VOLUME, result, CARD, DEVICE))
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--detect', nargs='?', default='', help='LABEL, FACE, LOGO and TEXT_DETECTION')
     parser.add_argument('--image', nargs='?', default='', help='Image file name')
+    parser.add_argument('--talk', nargs='?', default='N', help='Talk Y or N')
     args = parser.parse_args()
-    main(args.detect, args.image)
+    main(args.detect, args.image, args.talk)
     
