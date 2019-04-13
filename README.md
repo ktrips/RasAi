@@ -50,7 +50,7 @@ tar xzvf aquestalkpi-*.tgz
 ```
 sudo nano ~/.bashrc
 ```
-Add `GOOGLE_APPLICATION_CREDENTIALS="/home/pi/visionxxx.json`
+Add `GOOGLE_APPLICATION_CREDENTIALS="/home/pi/visionxxx.json"`
 ```
 echo $GOOGLE_APPLICATION_CREDENTIALS
 ```
