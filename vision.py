@@ -10,9 +10,6 @@ from datetime import datetime
 from googleapiclient import discovery
 from oauth2client.client import GoogleCredentials
 
-import aiy.audio
-import aiy.voicehat
-
 default_detect= ["FACE", "LABEL", "LOGO"]
 default_max   = 3
 dir_image     = '/home/pi/AIY-projects-python/src/smart/image/'
@@ -82,7 +79,6 @@ def main(detect="", photo_file=""):
           except:
             result += "No " + DET + ", "
         print('Result: ' + result)
-        aiy.audio.say(result, 'en-US')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
