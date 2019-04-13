@@ -1,27 +1,24 @@
 # RasAi
 Raspberry Ai Camera
 
-# Raspberry Pi Smart devices with Google APIs
+# Raspberry Pi Camera with AI
 
 Each programs are described in the articles in [DevicePlus](http://deviceplus.jp)
 
 ## Hardware requirements
 
-![Raspberry Pi Zero W](https://images-na.ssl-images-amazon.com/images/I/51TQvkcHJOL.jpg) + ![Google AIY](https://aiyprojects.withgoogle.com/)
+![Raspberry Pi Zero W](https://images-na.ssl-images-amazon.com/images/I/51TQvkcHJOL.jpg)
+![Seed Respeaker 2-Mic](https://images-na.ssl-images-amazon.com/images/I/61LUX8fc0xL._SL1024_.jpg)
+![RasPi Camera](https://images-na.ssl-images-amazon.com/images/I/41gHGo7BeuL.jpg) 
 
 ## How to setup the smart app and hardware
 
-1. Install Google AIY to your Raspberry Pi
-
-2. Make smart folder and copy examples from AIY python
+1. Install Google Vision API to your Raspberry Pi
 ```
-mkdir ~/AIY-projects-python/src/smart
-sudo cp ~/AIY-projects-python/src/examples/voice/* ~/AIY-projects-python/src/smart/
+sudo pip install --upgrade google-cloud-vision
 ```
 
-3. Place each files to the smart folder
-
-4. Setup required software
+2. Setup required software
 
 - Downlaod and install Seeed software
 
@@ -45,7 +42,7 @@ wget https://www.a-quest.com/archive/package/aquestalkpi-20130827.tgz
 tar xzvf aquestalkpi-*.tgz
 ```
 
-5. Setup Google SDK
+3. Setup Google SDK
 - Setup Google Vision
 ```
 sudo nano ~/.bashrc
@@ -60,7 +57,3 @@ echo $GOOGLE_APPLICATION_CREDENTIALS
 pip install --upgrade oauth2client
 pip install --upgrade google-cloud-translate
 ```
-
-## How to use the apps
-![Seed Respeaker 2-Mic](https://images-na.ssl-images-amazon.com/images/I/61LUX8fc0xL._SL1024_.jpg)
-![RasPi Camera](https://images-na.ssl-images-amazon.com/images/I/41gHGo7BeuL.jpg) 
