@@ -8,12 +8,35 @@ Each programs are described in the articles in [DevicePlus](http://deviceplus.jp
 ## Hardware requirements
 
 [Raspberry Pi Zero W](https://images-na.ssl-images-amazon.com/images/I/51TQvkcHJOL.jpg)
+
 [Seed Respeaker 2-Mic](https://images-na.ssl-images-amazon.com/images/I/61LUX8fc0xL._SL1024_.jpg)
+
 [RasPi Camera](https://images-na.ssl-images-amazon.com/images/I/41gHGo7BeuL.jpg) 
 
 ## How to setup the smart app and hardware
+1-1. Set Camera to Raspberry Pi
+```
+sudo raspistill -o image.jpg
+```
 
-1. Install Google Vision API to your Raspberry Pi
+1-2. Check Mic and Speaker
+Check Speaker:
+```
+aplay -l
+
+aplay /usr/share/sounds/alsa/Front_Center.wav
+```
+Check Mic:
+```
+arecord -l
+arecord voice.wav
+aplay voice.wav
+```
+
+1-3.
+
+
+2-1. Install Google Vision API to your Raspberry Pi
 ```
 sudo pip install picamera
 sudo pip install httplib2
@@ -21,7 +44,7 @@ sudo pip install --upgrade google-api-python-client
 sudo pip install --upgrade google-cloud-vision
 ```
 
-2. Setup required software
+2-2. Setup required software
 
 - Downlaod and install Seeed software
 
@@ -45,7 +68,7 @@ wget https://www.a-quest.com/archive/package/aquestalkpi-20130827.tgz
 tar xzvf aquestalkpi-*.tgz
 ```
 
-3. Setup Google SDK
+2-3. Setup Google SDK
 - Setup Google Vision
 ```
 sudo nano ~/.bashrc
