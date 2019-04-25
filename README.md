@@ -1,4 +1,4 @@
-# Raspberry Pi Camera with AI
+# Raspberry Pi Camera with Google API/AI
 
 Check commands and Sample programs for Video instruction in [DevicePlus](http://deviceplus.jp)
 
