@@ -65,10 +65,10 @@ tar xzvf aquestalkpi-*.tgz
 ### 2.2 Install Google Vision API to your Raspberry Pi
 
 - Go to [Google Cloud](https://cloud.google.com) and setup API
+- Download Google certificate and apply in Raspberry Pi (Add `GOOGLE_APPLICATION_CREDENTIALS="/home/pi/visionxxx.json"`)
 ```
 sudo nano ~/.bashrc
 ```
-Add `GOOGLE_APPLICATION_CREDENTIALS="/home/pi/visionxxx.json"`
 ```
 echo $GOOGLE_APPLICATION_CREDENTIALS
 ```
