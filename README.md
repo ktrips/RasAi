@@ -89,3 +89,12 @@ sudo pip install --upgrade google-cloud-vision
 pip install --upgrade oauth2client
 pip install --upgrade google-cloud-translate
 ```
+## 3. Let's use sample Python program and take a picture with AI
+
+```
+$ git clone https://github.com/ktrips/RasAi.git
+```
+or
+```
+$ wget https://github.com/ktrips/RasAi/blob/master/button_vision.py
+```
