@@ -1,9 +1,6 @@
-# RasAi
-Raspberry Ai Camera
-
 # Raspberry Pi Camera with AI
 
-Each programs are described in the articles in [DevicePlus](http://deviceplus.jp)
+Check commands and Sample programs for Video instruction in [DevicePlus](http://deviceplus.jp)
 
 ## Hardware requirements
 
