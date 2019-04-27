@@ -5,8 +5,8 @@ Check commands and Sample programs for Video instruction in [DevicePlus](http://
 ## Hardware requirements
 |[Raspberry Pi Zero & Seed Respeaker](https://amzn.to/2VnIlXZ)|[RasPi Camera](https://amzn.to/2Dwq0h9)|[Mini speaker](http://akizukidenshi.com/catalog/g/gP-12587/)|
 |---|---|---|
-|![Seed Respeaker 2-Mic](https://images-na.ssl-images-amazon.com/images/I/61LUX8fc0xL._SL1024_.jpg)(https://amzn.to/2VnIlXZ)|![RasPi Camera](https://images-na.ssl-images-amazon.com/images/I/41gHGo7BeuL.jpg)(https://amzn.to/2Dwq0h9)|![Mini speaker](http://akizukidenshi.com/img/goods/C/P-12587.jpg)(http://akizukidenshi.com/catalog/g/gP-12587/)|
-|[LiPo Battery]|[Slide Switch]|[RasPi Zero Case](https://amzn.to/2VnIlXZ)|
+|![Seed Respeaker 2-Mic](https://images-na.ssl-images-amazon.com/images/I/61LUX8fc0xL._SL1024_.jpg)|![RasPi Camera](https://images-na.ssl-images-amazon.com/images/I/41gHGo7BeuL.jpg)|![Mini speaker](http://akizukidenshi.com/img/goods/C/P-12587.jpg)|
+|LiPo Battery|Slide Switch|[RasPi Zero Case](https://amzn.to/2VnIlXZ)|
 
 
 ## I. Hardware setup
