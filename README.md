@@ -7,7 +7,7 @@ Check commands and Sample programs for Video instruction in [DevicePlus](http://
 |---|---|
 ![Seed Respeaker 2-Mic](https://images-na.ssl-images-amazon.com/images/I/61LUX8fc0xL._SL1024_.jpg)|![RasPi Camera](https://images-na.ssl-images-amazon.com/images/I/41gHGo7BeuL.jpg) 
 |[Mini speaker]|[LiPo Battery]|
-|---|---|
+|[Slide Switch]|[RasPi Zero Case]|
 
 
 ## I. Hardware setup
@@ -59,6 +59,8 @@ $ git clone https://github.com/respeaker/mic_hat.git
 $ cd mic_hat
 $ python pixels.py
 ```
+
+
 
 ---
 
