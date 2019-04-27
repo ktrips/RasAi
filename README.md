@@ -3,9 +3,9 @@
 Check commands and Sample programs for Video instruction in [DevicePlus](http://deviceplus.jp)
 
 ## Hardware requirements
-|[Raspberry Pi Zero & Seed Respeaker]|[RasPi Camera]|
+|[Raspberry Pi Zero & Seed Respeaker](https://amzn.to/2VnIlXZ)|[RasPi Camera]|
 |---|---|
-![Seed Respeaker 2-Mic](https://images-na.ssl-images-amazon.com/images/I/61LUX8fc0xL._SL1024_.jpg)|![RasPi Camera](https://images-na.ssl-images-amazon.com/images/I/41gHGo7BeuL.jpg) 
+|![Seed Respeaker 2-Mic](https://images-na.ssl-images-amazon.com/images/I/61LUX8fc0xL._SL1024_.jpg)(https://amzn.to/2VnIlXZ)|![RasPi Camera](https://images-na.ssl-images-amazon.com/images/I/41gHGo7BeuL.jpg)|
 |[Mini speaker]|[LiPo Battery]|
 |[Slide Switch]|[RasPi Zero Case]|
 
