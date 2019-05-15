@@ -145,6 +145,4 @@ $ python button_vision.py
 
 if push the button once, detect label (--detect label),
 
-else if push the button twice, detect text (--detect text), and
-
-hold the button then check smile face (--detect face)
+else if hold the button then check smile face (--detect face)
