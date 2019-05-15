@@ -13,7 +13,7 @@ from oauth2client.client import GoogleCredentials
 default_detect= ["FACE", "LABEL", "LOGO"]
 default_max   = 3
 dir_image     = '/home/pi/RasPi/image/'
-dir_aquest    = '/home/pi/RasPi/aquestalkpi/'
+dir_aquest    = '/home/pi/RasPi/aquestalkpi'
 CARD  = 1
 DEVICE= 0
 VOLUME= 80
