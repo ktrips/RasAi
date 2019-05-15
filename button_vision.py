@@ -14,7 +14,7 @@ GPIO.setup(BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 #GPIO.setup(LED, GPIO.OUT)
 
 actions = ['python vision.py --detect face', #ボタン長押しで笑顔検出、日本語発話
-           'python vision.py', #ワンプッシュで顔、ラベル、ロゴ全部読み取り
+           'python vision.py --detect label', #ワンプッシュでラベル読み取り
            'python vision.py --detect text'] #ダブルプッシュで文字読み取り
 pixels.wakeup()
 time.sleep(hold_time)
