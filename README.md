@@ -142,7 +142,7 @@ File structure is as below:
 $ python button_vision.py
 ```
 
-if push the button once, detect label, logo, face, (--detect all)
+if push the button once, detect label,
 
 else if push the button twice, detect text (--detect text), and
 
