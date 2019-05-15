@@ -141,3 +141,9 @@ File structure is as below:
 ```
 $ python button_vision.py
 ```
+
+if push the button once, detect label, logo, face, (--detect all)
+
+else if push the button twice, detect text (--detect text), and
+
+hold the button then check smile face (--detect face)
