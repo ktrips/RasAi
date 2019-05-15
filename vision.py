@@ -12,8 +12,8 @@ from oauth2client.client import GoogleCredentials
 
 default_detect= ["FACE", "LABEL", "LOGO"]
 default_max   = 3
-dir_image     = '/home/pi/Programs/image/'
-dir_aquest    = '/home/pi/Programs/aquestalkpi/'
+dir_image     = '/home/pi/RasPi/image/'
+dir_aquest    = '/home/pi/RasPi/aquestalkpi/'
 CARD  = 1
 DEVICE= 0
 VOLUME= 80
@@ -84,7 +84,7 @@ def main(detect="", photo_file=""):
           except:
             result += "No " + DET + ", "
         print('Result: ' + result)
-        #os.system(dir_aquest + '/AquesTalkPi -g {} {} | aplay -D plughw:{},{}'.format(VOLUME, result, CARD, DEVICE))
+        os.system(dir_aquest + '/AquesTalkPi -g {} {} | aplay -D plughw:{},{}'.format(VOLUME, result, CARD, DEVICE))
 
 
 if __name__ == '__main__':
