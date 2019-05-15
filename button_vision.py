@@ -11,7 +11,6 @@ hold_time=1.2
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(BUTTON, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-#GPIO.setup(LED, GPIO.OUT)
 
 actions = ['python vision.py --detect face', #ボタン長押しで笑顔検出、日本語発話
            'python vision.py --detect label', #ワンプッシュでラベル読み取り
