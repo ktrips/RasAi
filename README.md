@@ -119,7 +119,7 @@ $ git clone https://github.com/ktrips/RasAi.git
 ```
 or
 ```
-$ wget https://github.com/ktrips/RasAi/blob/master/button.py
+$ wget https://github.com/ktrips/RasAi/blob/master/vision.py
 $ wget https://github.com/ktrips/RasAi/blob/master/button_vision.py
 ```
 
@@ -137,3 +137,7 @@ File structure is as below:
 
 
 ## Have fun!
+
+```
+$ python button_vision.py
+```
