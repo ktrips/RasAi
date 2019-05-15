@@ -119,11 +119,9 @@ $ git clone https://github.com/ktrips/RasAi.git
 ```
 or
 ```
-$ sudo mkdir ~/RasAi
-$ sudo mkdir ~/RasAi/image
-$ sudo cd ~/RasAi
-$ wget https://github.com/ktrips/RasAi/blob/master/vision.py
-$ wget https://github.com/ktrips/RasAi/blob/master/button_vision.py
+$ sudo mkdir ~/RasAi ~/RasAi/image
+$ cd ~/RasAi
+$ wget https://github.com/ktrips/RasAi/blob/master/vision.py https://github.com/ktrips/RasAi/blob/master/button_vision.py
 ```
 
 File structure is as below:
