@@ -6,7 +6,7 @@ Use commands and sample programs for How-to-make video instruction.
 |[Raspberry Pi Zero & Seed Respeaker](https://amzn.to/2VnIlXZ)|[RasPi Camera](https://amzn.to/2Dwq0h9)|[Mini speaker](http://akizukidenshi.com/catalog/g/gP-12587/)|
 |---|---|---|
 |![Seed Respeaker 2-Mic](https://images-na.ssl-images-amazon.com/images/I/61LUX8fc0xL._SL1024_.jpg)|![RasPi Camera](https://images-na.ssl-images-amazon.com/images/I/41gHGo7BeuL.jpg)|![Mini speaker](http://akizukidenshi.com/img/goods/C/P-12587.jpg)|
-|LiPo Battery|Slide Switch|[RasPi Zero Case](https://amzn.to/2VnIlXZ)|
+| [LiPo Battery](https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-4YZM) | [Slide Switch](https://www.sengoku.co.jp/mod/sgk_cart/detail.php?code=EEHD-4WYU) | [RasPi Zero Case](https://amzn.to/2VnIlXZ) |
 
 ---
 
