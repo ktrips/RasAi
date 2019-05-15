@@ -113,18 +113,6 @@ pip install --upgrade google-cloud-translate
 
 ## II-3. Let's use sample Python program and take a picture with AI
 
-File structure is as below:
-
-~/vision.json
-
-~/RasAi/image/
-
-~/RasAi/aquestalk/
-
-~/RasAi/vision.py
-
-~/RasAi/button_vision.py
-
 
 ```
 $ git clone https://github.com/ktrips/RasAi.git
@@ -134,5 +122,18 @@ or
 $ wget https://github.com/ktrips/RasAi/blob/master/button.py
 $ wget https://github.com/ktrips/RasAi/blob/master/button_vision.py
 ```
+
+File structure is as below:
+
+/home/pi/vision.json
+
+/home/pi/RasAi/image/
+
+/home/pi/RasAi/aquestalk/
+
+/home/pi/RasAi/vision.py
+
+/home/pi/RasAi/button_vision.py
+
 
 ## Have fun!
