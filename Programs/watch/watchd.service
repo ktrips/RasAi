@@ -1,0 +1,10 @@
+Description=Smart Watch Auto Run Programs
+
+[Service]
+ExecStart=/bin/bash /home/pi/Programs/watch/watchd.sh
+WorkingDirectory=/home/pi/Programs/watch
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
