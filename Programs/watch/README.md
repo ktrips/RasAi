@@ -1,7 +1,7 @@
 # RasPi Smart Watch
 ## button_watch.py
 ## stream_jp_watch.py
-## Grobe Files
+## Grove Files
  - grove_oled_temp.py
  - grove_oled_ir.py
 ## Google Assistant Files
