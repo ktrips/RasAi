@@ -20,9 +20,29 @@
        subject = conv_title + '(' + dateStr + ')'
        return subject, minutes
 
-      
-       
-# (def mainプログラム中)
+
+# (def main()プログラム中)
+         if not text:
+           print('Sorry but please say again in ' + speech_lang)
+         else:
+           convDateStr = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+           i += 1
+           print(str(i) + text + convDateStr)
+           minutes_words= ['議事録', '打合せ', 'ミーティング']
+           keyw = ""
+           text.lower()
+           for m in minutes_words:
+             if text.find(m) > -1:
+               keyw = "minutes"
+               break
+           conv = {"number": i,
+               "convDateTime": datetime.now(),
+               "convt": text,
+               "keyw": keyw}
+           convs.append(conv)
+           if repeat != "no":
+
+            
            bye_words    = ['終わりです', '終了', 'おわり', 'さようなら', 'さよなら', 'バイバイ']
 …
                aiy.audio.say(nolang, "en-US")
