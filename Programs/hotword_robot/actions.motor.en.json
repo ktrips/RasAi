@@ -1,0 +1,76 @@
+{
+	"locale": "en",
+	"manifest": {
+    	"displayName": "Move Motor",
+    	"invocationName": "Move motor",
+    	"category": "PRODUCTIVITY"
+	},
+	"actions": [
+    	{
+        	"name": "com.acme.actions.motor",
+        	"availability": {
+            	"deviceClasses": [
+                	{
+                    	"assistantSdkDevice": {}
+                	}
+            	]
+        	},
+        	"intent": {
+            	"name": "com.acme.intents.motor",
+            	"parameters": [
+                	{
+                    	"name": "number",
+                    	"type": "SchemaOrg_Number"
+                	},
+                	{
+                    	"name": "direction_target",
+                    	"type": "DirectionType"
+                	}
+            	],
+            	"trigger": {
+                	"queryPatterns": [
+                    	"Move $DirectionType:direction_target"
+                	]
+            	}
+        	},
+        	"fulfillment": {
+            	"staticFulfillment": {
+                	"templatedResponse": {
+                    	"items": [
+                        	{
+                            	"simpleResponse": {
+                                	"textToSpeech": "Moving to $target_target.raw !"
+                            	}
+   	                     },
+                        	{
+                            	"deviceExecution": {
+                                	"command": "com.acme.commands.motor",
+                                	"params": {
+                 	                   "directionKey": "$direction_target.raw",
+                                    	   "number": "$number"
+                                	}
+                            	}
+                        	}
+                    	]
+                	}
+            	}
+        	}
+    	}
+	],
+	"types": [
+    	{
+        	"name": "$DirectionType",
+        	"entities": [
+            	{
+                	"key": "DIRECTION",
+                	"synonyms": [
+                    	"forward",
+                    	"right",
+                    	"left",
+                        "backward"
+                	]
+            	}
+        	]
+    	}
+	]
+}

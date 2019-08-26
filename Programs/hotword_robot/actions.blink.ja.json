@@ -1,0 +1,78 @@
+
+{
+	"locale": "ja",
+	"manifest": {
+    	"displayName": "Blink light",
+    	"invocationName": "Blink light",
+    	"category": "PRODUCTIVITY"
+	},
+	"actions": [
+    	{
+        	"name": "com.acme.actions.blink_light",
+        	"availability": {
+            	"deviceClasses": [
+                	{
+                    	"assistantSdkDevice": {}
+                	}
+            	]
+        	},
+        	"intent": {
+            	"name": "com.acme.intents.blink_light",
+            	"parameters": [
+                	{
+                    	"name": "number",
+                    	"type": "SchemaOrg_Number"
+                	},
+                	{
+                    	"name": "light_target",
+                    	"type": "LightType"
+                	}
+            	],
+            	"trigger": {
+                	"queryPatterns": [
+                    	"$LightType:light_target $SchemaOrg_Number:number 回つけて"
+                	]
+            	}
+        	},
+        	"fulfillment": {
+            	"staticFulfillment": {
+                	"templatedResponse": {
+                    	"items": [
+                        	{
+                            	"simpleResponse": {
+                                	"textToSpeech": "$light_target.raw を $number 回つけますね！"
+                            	}
+   	                     },
+                        	{
+                            	"deviceExecution": {
+                                	"command": "com.acme.commands.blink_light",
+                                	"params": {
+                 	                   "lightKey": "$light_target.raw",
+                                    	"number": "$number"
+                                	}
+                            	}
+                        	}
+                    	]
+                	}
+            	}
+        	}
+    	}
+	],
+	"types": [
+    	{
+        	"name": "$LightType",
+        	"entities": [
+            	{
+                	"key": "LIGHT",
+                	"synonyms": [
+                    	"LED",
+                    	"電器",
+                    	"電気",
+                    	"ライト",
+                    	"電球"
+                	]
+            	}
+        	]
+    	}
+	]
+}

@@ -1,0 +1,80 @@
+{
+	"locale": "ja",
+	"manifest": {
+    	"displayName": "モーター",
+    	"invocationName": "move motor",
+    	"category": "PRODUCTIVITY"
+	},
+	"actions": [
+    	{
+        	"name": "com.acme.actions.motor",
+        	"availability": {
+            	"deviceClasses": [
+                	{
+                    	"assistantSdkDevice": {}
+                	}
+            	]
+        	},
+        	"intent": {
+            	"name": "com.acme.intents.motor",
+            	"parameters": [
+                	{
+                    	"name": "number",
+                    	"type": "SchemaOrg_Number"
+                	},
+                	{
+                    	"name": "direction_target",
+                    	"type": "DirectionType"
+             	   }
+            	],
+            	"trigger": {
+                	"queryPatterns": [
+                    	"$DirectionType:direction_target 動いて"
+                	]
+            	}
+        	},
+        	"fulfillment": {
+            	"staticFulfillment": {
+                	"templatedResponse": {
+                    	"items": [
+                        	{
+                            	"simpleResponse": {
+                                	"textToSpeech": "$direction_target.raw に動きます！"
+                            	}
+                             },
+                                {
+                                "deviceExecution": {
+                                        "command": "com.acme.commands.motor",
+                                        "params": {
+                                           "directionKey": "$direction_target.raw",
+                                        "number": "$number"
+                                        }
+                                }
+                                }
+                        ]
+                        }
+                }
+                }
+        }
+        ],
+        "types": [
+        {	
+            "name": "$DirectionType",
+        	"entities": [
+            	{
+                	"key": "DIRECTION",
+                	"synonyms": [
+                    	"前",
+                    	"後",
+                    	"後ろ",
+                    	"右",
+                    	"左",
+                    	"こっち",
+                    	"あっち"
+                	]
+                }
+                ]
+        }
+        ]
+}
+
