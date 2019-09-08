@@ -58,7 +58,7 @@ def spinny(delta):
 @skywriter.double_tap()
 def doubletap(position):
   print('Double tap!', position)
-  os.system("python3 /home/pi/Programs/gesture/vision.py")
+  os.system("python3 /home/pi/Programs/gesture/visiontalk.py")
 
 @skywriter.tap()
 def tap(position):
