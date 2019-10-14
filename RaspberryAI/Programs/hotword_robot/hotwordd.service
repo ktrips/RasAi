@@ -1,0 +1,15 @@
+[Unit]
+Description = Google Assistant Hotword
+After=syslog.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/Programs
+#ExecStart=/home/pi/env/bin/python /home/pi/env/bin/googlesamples-assistant-hotword --credentials /home/pi/.config/google-oauthlib-tool/credentials.json
+#ExecStart=/home/pi/env/bin/python /home/pi/env/bin/googlesamples-assistant-hotword --credentials /home/pi/.config/google-oauthlib-tool/credentials.json --project-id raspberryai --device-model-id raspberryai-rasaiprd
+ExecStart=/home/pi/Programs/google_hotword.sh
+Restart=on-abort
+#always
+
+[Install]
+WantedBy=multi-user.target
