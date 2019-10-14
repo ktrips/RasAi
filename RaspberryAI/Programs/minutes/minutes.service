@@ -1,0 +1,9 @@
+Description=Streaming Minutes Device
+[Service]
+ExecStart=/bin/bash /home/pi/Programs/minutes/minutes.sh
+WorkingDirectory=/home/pi/Programs/minutes/
+Restart=always
+User=pi
+[Install]
+WantedBy=multi-user.target
+
