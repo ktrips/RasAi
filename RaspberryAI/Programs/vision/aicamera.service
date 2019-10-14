@@ -1,0 +1,9 @@
+Description=AI Camera
+[Service]
+ExecStart=/bin/bash /home/pi/Programs/vision/aicamera.sh
+WorkingDirectory=/home/pi/Programs/vision/
+Restart=always
+User=pi
+[Install]
+WantedBy=multi-user.target
+
