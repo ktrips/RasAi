@@ -1,4 +1,5 @@
 # -*- encoding:utf-8 -*-
+
 from tkinter import *
 from datetime import datetime
 import RPi.GPIO as GPIO
@@ -16,9 +17,10 @@ import subprocess
 import requests
 import yaml
 
-url = 'https://zzz.cognitiveservices.azure.com/face/v1.0/detect' #zzz部分は自分で定義したアプリ名
-key = 'xxx’ #上で取得したキーを入力
+url = 'https://zzzz.cognitiveservices.azure.com/face/v1.0/detect'
+key = 'xxxx'
 ret = 'age,gender,smile,emotion'
+img_path = '/home/pi/Programs/image/'
 
 human_pin = 4
 GPIO.setmode(GPIO.BCM)
@@ -50,7 +52,7 @@ def face_api(url, key, ret, image):
 def camera():
     now = datetime.now()
     dir_name = now.strftime('%Y%m%d')
-    dir_path = '/home/pi/Programs/image/' + dir_name + '/'
+    dir_path = img_path + dir_name + '/'
     file_name= now.strftime('%H%M%S') + '.jpg'
     fname    = dir_path + file_name
     try:
@@ -61,6 +63,7 @@ def camera():
     return fname
 
 def call_face(fname):
+
     faces = face_api(url, key, ret, fname)
     print('3. Run Face API!')
 
@@ -74,42 +77,48 @@ def call_face(fname):
           gender= face["faceAttributes"]["gender"]
           print(left, top, right, bottom, age, gender)
 
-          if age < 20:
-                  if gender == 'male':
-                    category = 'Boy'
-                  else:
-                    category = 'Girl'
+          if age < 15:
+              category = 'Child'
+          elif age < 30:
+              if gender == 'male':
+                  category = 'Boy'
+              else:
+                  category = 'Girl'
           else:
-                  if gender == 'male':
-                    category = 'Man'
-                  else:
-                    category = 'Woman'
-          face_result = category+" ("+gender+", "+str(age)+")"
-          print ('5. Result: '+face_result)
-         
-          os.system('omxplayer -o hdmi /home/pi/Programs/image/'+category+'.mp4')
+              if gender == 'male':
+                  category = 'Man'
+              else:
+                  category = 'Woman'
 
+          face_result = category+" ("+gender+", "+str(age)+")"
+          os.system('omxplayer -o '+img_path+category+'.mp4')
     else:
-        print('4. No face detected')
+        face_result = 'No face'
+
+    print('4. Result:  '+face_result)
 
     return face_result
 
-QR = "/home/pi/Programs/image/qr.gif"
+# メインウィンドウ作成
 root = Tk()
+# メインウィンドウサイズ
 root.geometry("720x480")
-root.title("PiDisplay")
+# メインウィンドウタイトル
+root.title("PiAd")
 
-canvas = Canvas(root, bg="#FFFFFF", width=500, height=480)
-canvas.pack(expand=True, fill='x', padx=5, side='left')
+# Canvas 作成
+c = Canvas(root, bg="#FFFFFF", width=500, height=480)
+c.pack(expand=True, fill='x', padx=5, side='left')
 
-cheader = canvas.create_text(350, 80, font=('', 60, 'bold'), fill='red')
-cdate = canvas.create_text(350, 180, font=('', 40, 'bold'), fill='black')
-ctime= canvas.create_text(350, 280, font=('', 80), fill='black')
-cface = canvas.create_text(350, 400, font=('', 40), fill='blue')
-img = PhotoImage(file=QR)
-Label(root, image = img).pack(side='right', padx=5)
+# 文字列作成
+ch = c.create_text(500, 80, font=('', 50, 'bold'), fill='red')
+cd = c.create_text(500, 180, font=('', 40, 'bold'), fill='black')
+ct = c.create_text(500, 280, font=('', 60), fill='black')
+cf = c.create_text(500, 400, font=('', 40), fill='blue')
 
+# メインウィンドウの最大化
 root.attributes("-zoomed", "1")
+# 常に最前面に表示
 root.attributes("-topmost", False)
 
 def cupdate():
@@ -128,18 +137,21 @@ def cupdate():
        stext = '誰もいません'
        print('0. No human')
     sleep(1)
-
     # 現在時刻を表示
     now = datetime.now()
     d = '{0:0>4d}年{1:0>2d}月{2:0>2d}日 ({3})'.format(now.year, now.month, now.day, now.strftime('%a'))
     t = '{0:0>2d}:{1:0>2d}:{2:0>2d}'.format(now.hour, now.minute, now.second)
-    canvas.itemconfigure(cheader, text='Pi Display')
-    canvas.itemconfigure(cdate, text=d)
-    canvas.itemconfigure(ctime, text=t)
-    canvas.itemconfigure(cface, text=stext)
-    canvas.update()
+    c.itemconfigure(ch, text='性別,年齢に応じた広告表示中！')
+    c.itemconfigure(cd, text=d)
+    c.itemconfigure(ct, text=t)
+    c.itemconfigure(cf, text=stext)
+    c.update()
+    # 1秒間隔で繰り返す
     root.after(1000, cupdate)
 
+# コールバック関数を登録
 root.after(1000, cupdate)
+# メインループ
 root.mainloop()
+
 GPIO.cleanup()
