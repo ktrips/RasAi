@@ -104,7 +104,7 @@ root = Tk()
 # メインウィンドウサイズ
 root.geometry("720x480")
 # メインウィンドウタイトル
-root.title("PiAd")
+root.title("PiDisplay")
 
 # Canvas 作成
 c = Canvas(root, bg="#FFFFFF", width=500, height=480)
@@ -124,7 +124,7 @@ root.attributes("-topmost", False)
 def cupdate():
     human_exists = int(GPIO.input(human_pin) == GPIO.HIGH)
     if human_exists:
-        stext = '人が来ました！'
+        stext = 'ご乗車ありがとうございます！'
         print('1. Human exists!')
         fname = camera()
         print('2. Took a picture as '+fname)
@@ -141,7 +141,7 @@ def cupdate():
     now = datetime.now()
     d = '{0:0>4d}年{1:0>2d}月{2:0>2d}日 ({3})'.format(now.year, now.month, now.day, now.strftime('%a'))
     t = '{0:0>2d}:{1:0>2d}:{2:0>2d}'.format(now.hour, now.minute, now.second)
-    c.itemconfigure(ch, text='性別,年齢に応じた広告表示中！')
+    c.itemconfigure(ch, text='性別,年齢に応じた動画表示中！')
     c.itemconfigure(cd, text=d)
     c.itemconfigure(ct, text=t)
     c.itemconfigure(cf, text=stext)
